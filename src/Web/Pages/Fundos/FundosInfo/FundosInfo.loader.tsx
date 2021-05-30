@@ -6,7 +6,7 @@ function FundosInfoLoader() {
     const Page = useMemo(
         () =>
             React.lazy(async () => {
-               // await beforeFundosInfoLoad()
+                await beforeFundosInfoLoad()
                 return import('./FundosInfo.page')
             }),
         []

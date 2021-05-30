@@ -32,6 +32,7 @@
     "react-simple-timefield": "^3.2.3",
     "react-swipeable-views": "^0.13.9",
     "styled-components": "^5.2.0",
+    "tslib": "^2.2.0",
     "typescript": "^3.9.9"
   },
   "scripts": {

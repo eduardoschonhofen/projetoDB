@@ -1,9 +1,11 @@
-import FundoInfo from "../Domain/FundoInfo"
+import CompanhiaDetails, { CompanhiaDetailsFactory } from "../Domain/CompanhiaDetails"
+import CompanhiaInfo from "../Domain/CompanhiaInfo"
 import Store from "./Store"
 
 class CompanhiasInfo {
 	constructor(
-		public companhiasInfo: FundoInfo[] = []
+		public companhiasInfo: CompanhiaInfo[] = [],
+		public companhiaDetails: CompanhiaDetails = CompanhiaDetailsFactory({})
 	) { }
 }
 

@@ -6,7 +6,7 @@ function CompanhiasInfoLoader() {
     const Page = useMemo(
         () =>
             React.lazy(async () => {
-               // await beforeCompanhiasInfoLoad()
+                await beforeCompanhiasInfoLoad()
                 return import('./CompanhiasInfo.page')
             }),
         []
