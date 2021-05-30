@@ -13,6 +13,8 @@ function CompanhiaReportsTable() {
   const [dataSource, setDataSource] = useState<CompanhiaReport[]>([])
   const [year, setYear] = useState<number | undefined>()
   const [cnpj, setCnpj] = useState<string | undefined>()
+  const [code, setCode] = useState<string | undefined>()
+
 
   useEffect(() => { setDataSource([...data]) }, [data])
 
@@ -50,16 +52,17 @@ function CompanhiaReportsTable() {
   ];
   const handleCNPJ = (value: any) => {
     setCnpj(value.currentTarget.value)
-    filterData({ cnpj: value.currentTarget.value })
+    filterData({ cnpj: value.currentTarget.value, code: code, year: year })
   }
 
   const handleYear = (value: Moment | null) => {
     setYear(value?.year())
-    filterData({ year: value?.year() })
+    filterData({ year: value?.year(),cnpj:cnpj,code:code })
   }
 
   const handleCode = (value: any) => {
-    filterData({ code: value.currentTarget.value })
+    setCode(value.currentTarget.value)
+    filterData({ code: value.currentTarget.value,year:year,cnpj:cnpj })
   }
   const filterData = ({ year, cnpj, code }: any) => {
     var newData = data
